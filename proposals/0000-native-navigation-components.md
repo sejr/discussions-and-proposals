@@ -9,7 +9,7 @@ date: 3 March, 2019
 
 ## Summary
 
-This proposal describes a new way of working with native navigation components in React Native projects. Specifically, I suggest we maintain a suite of navigation components for iOS and Android platforms (and more, down the line) that derive their APIs *directly* from their respective platforms.
+This proposal describes a new way of working with native navigation components in React Native projects. Specifically, I suggest maintaining a suite of navigation components for iOS and Android platforms (and more, down the line) that derive their APIs *directly* from their respective platforms.
 
 **I believe this proposal might be best-implemented as an expansion of the [proposal](https://github.com/react-native-community/discussions-and-proposals/pull/49) to separate iOS and Android components into their own libraries under a `@react-native` monorepo.**
 
