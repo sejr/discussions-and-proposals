@@ -47,9 +47,12 @@ function About() {
 
 function App() {
     return (
-        <NavigationController root={Home}>
-            <NavigationBar prefersLargeTitles />
-        </NavigationController>
+        <NavigationController
+            root={ <Home /> }
+            navigationBar={
+                <NavigationBar prefersLargeTitles />
+            }
+        />
     );
 }
 
@@ -78,9 +81,64 @@ When we consider native components made available in the React Native core, navi
 
 #### Stack Navigation
 
-- **NavigationController**
-- **NavigationBar**
-- **NavigationItem**
+[**NavigationController**](https://developer.apple.com/documentation/uikit/uinavigationcontroller)
+
+``` jsx
+import { NavigationController, NavigationItem } from '@react-native/ios';
+import { View, Text, Button } from '@react-native/core';
+
+function Example() {
+    return (
+        <NavigationItem title="Example">
+            <View style={styles.container}>
+                <Button onPress={() => NavigationController.push(Example)} title="Push" />
+                <Button onPress={() => NavigationController.pop()} title="Pop" />
+                <Button onPress={() => NavigationController.popToRoot()} title="Pop to Root" />
+            </View>
+        </NavigationItem>
+    );
+}
+```
+
+``` tsx
+interface NavigationControllerProps {
+
+    // This is the first view rendered by the NavigationController. Any
+    // component that is utilized by the NavigationController should be encapsulated
+    // by the `NavigationItem` HOC to provide information to the NavigationController.
+    root?: JSX.Element;
+    
+    // You can provide a custom navigation bar to be used across every item that is
+    // presented with this NavigationController instance. This could be overridden
+    // inside individual NavigationItems.
+    navigationBar?: JSX.Element;
+    
+    // The toolbar is a small element that is displayed at the bottom of the
+    // NavigationController. For example, think of the bar at the bottom of Safari on
+    // iOS that has buttons to view tabs, history, etc.
+    toolbar?: JSX.Element;
+}
+```
+
+[**NavigationBar**](https://developer.apple.com/documentation/uikit/uinavigationbar)
+
+``` tsx
+interface NavigationBarProps {
+    
+    // Pretty self-explanatory. If the passed value is true, then any NavigationItem
+    // that uses this NavigationBar will be presented with large titles.
+    prefersLargeTitles: boolean;
+    
+    // This allows you to override the appearance of the title.
+    titleStyle?: StyleSheet.Styles;
+    
+    // This allows you to override the appearance of the large title. This is required
+    // because the regular title and the large title are actually two distinct views.
+    largeTitleStyle?: StyleSheet.Styles;
+}
+```
+
+**NavigationItem**
 
 #### Tab Navigation
 
