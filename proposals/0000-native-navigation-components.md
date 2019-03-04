@@ -73,7 +73,7 @@ The following statement comes from the React Native website:
 
 > The apps you are building with React Native aren't mobile web apps because React Native uses the same fundamental UI building blocks as regular iOS and Android apps. Instead of using Swift, Kotlin or Java, you are putting those building blocks together using JavaScript and React.
 
-When we consider native components made available in the React Native core (e.g. NavigatorIOS), navigation solutions seem to be outdated and possibly deprecated.
+When we consider native components made available in the React Native core (e.g. NavigatorIOS), navigation solutions seem to be outdated and possibly deprecated in favor of pure JavaScript alternatives. I believe this is the wrong direction, or at least there should be a solid native alternative that works out of the box.
 
 ## Detailed design
 
