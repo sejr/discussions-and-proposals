@@ -73,13 +73,15 @@ The following statement comes from the React Native website:
 
 > The apps you are building with React Native aren't mobile web apps because React Native uses the same fundamental UI building blocks as regular iOS and Android apps. Instead of using Swift, Kotlin or Java, you are putting those building blocks together using JavaScript and React.
 
-When we consider native components made available in the React Native core, navigation solutions are not given enough attention. I am not even sure if they have been officially deprecated or not.
+When we consider native components made available in the React Native core (e.g. NavigatorIOS), navigation solutions seem to be outdated and possibly deprecated.
 
 ## Detailed design
 
 ### iOS Components
 
 #### Stack Navigation
+
+Note: a lot of this could be accomplished by updating `NavigatorIOS`, but I think it would make sense to use the naming conventions from UIKit. This would make the library more approachable to native mobile devs and remain more consistent with relevant documentation from Apple.
 
 [**NavigationController**](https://developer.apple.com/documentation/uikit/uinavigationcontroller)
 
